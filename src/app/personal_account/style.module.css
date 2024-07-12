@@ -50,7 +50,8 @@
 
 .main__content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* margin: 0 auto; */
 }
 
 .nav {
@@ -61,6 +62,7 @@
     margin-bottom: 40px;
     font-weight: 500;
     font-size: 28px;
+    text-align: center;
 }
 
 .nav__item {

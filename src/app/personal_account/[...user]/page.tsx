@@ -16,7 +16,7 @@ const Account = ({params}:{params: paramsType}) => {
     const [InputSurname , SetInputSurname] = useState(decodeURI(params.user[2]));
     const [InputUniversity , SetInputUniversity] = useState(decodeURI(params.user[4]));
     const [InputFaculty , SetInputFaculty] = useState(decodeURI(params.user[5]));
-    
+
     const [Phone , SetPhone] = useState('');
     const [Subjects , SetSubjects] = useState('');
     
@@ -64,13 +64,7 @@ const Account = ({params}:{params: paramsType}) => {
 
 
     const university = [
-        'Московский государственный университет им. М.В. Ломоносова',
-        'НИУ ВШЭ - Москва',
-        'Финансовый университет при Правительстве РФ',
-        'Московский государственный институт международных отношений МИД РФ',
-        'Московский государственный технический университет им. Н.Э. Баумана',
-        'Национальный исследовательский ядерный университет «МИФИ»',
-        'Московский физико-технический институт'
+        'НИУ ВШЭ - Москва'
     ]
 
     return(
