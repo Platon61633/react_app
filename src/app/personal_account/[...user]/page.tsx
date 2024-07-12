@@ -4,6 +4,7 @@ import style from '../style.module.css'
 import React, { useEffect, useState } from 'react';
 import '../media.css'
 import axios from 'axios';
+import Link from 'next/link';
 
 type paramsType = {
     user: string[];
@@ -23,6 +24,9 @@ const Account = ({params}:{params: paramsType}) => {
     
 
     const [Answer , SetAnswer] = useState('');
+
+    const [AnswerAnketa , SetAnswerAnketa] = useState('');
+    
 
     // const [KolVoInput , SetKolVoInput] = useState([0]);
     
@@ -48,10 +52,12 @@ const Account = ({params}:{params: paramsType}) => {
         }
     }
 
-    const SaveAnket = ()=>{
-        axios.post('https://evraz-back.vercel.app/api?need=create_post', {Comment, Phone, Subjects, user_id: params.user[0], password: params.user[3]} )
+    const SaveAnket = async ()=>{
+        SetAnswerAnketa('Ожидайте')
+        await axios.post('https://evraz-back.vercel.app/api?need=create_post', {Comment, Phone, Subjects, user_id: params.user[0], password: params.user[3]} )
         .then(e=>console.log(e.data)
         )
+        SetAnswerAnketa('Успешно')
         // console.log(Subjects, Comment, Phone);
         
     }
@@ -83,6 +89,7 @@ const Account = ({params}:{params: paramsType}) => {
         </div>
     </header>
     <main className={style.main}>
+        <Link href={`/main/${params.user[0]}/${params.user[1]}/${params.user[2]}/${params.user[3]}/${params.user[4]}/${params.user[5]}/${params.user[6]}`}><img src="/arrow_left_alt.svg" alt="" width={50} style={{marginLeft: 50}}/></Link>
         <div className={`${style.container} ${style.main__container}`}>
             <h1 className={style.main__title}>Профиль</h1>
             <div className={style.main__content}>
@@ -176,7 +183,10 @@ const Account = ({params}:{params: paramsType}) => {
                             </div>
                             <div className={style.buttonWrapper}>
                                     <button onClick={SaveAnket} className={`${style.settings__itemButton} ${style.btnSave}`}>Сохранить</button>
-                                    
+                                    {AnswerAnketa.length?
+                                    <div style={{backgroundColor: AnswerAnketa==='Успешно'?'green':'red'}} className={style.answer}>{AnswerAnketa}</div>
+                                    :
+                                    null}
                                     {/* <button className={`${style.settings__itemButton} ${style.btnCancel}`}>Отменить</button> */}
                                 </div>
                         </ul>: null}
