@@ -79,7 +79,9 @@ const Account = ({params}:{params: paramsType}) => {
             <select className={style.header__select} name="faculty">
                 <option className={style.header__option}>Факультет компьютерных наук</option>
             </select>
-            <a href="#" className={style.header__lk}><img src="/lk.svg" alt="личный кабинет"/></a>
+            {/* <div>Выйти</div> */}
+            {/* <a href="#" className={style.header__lk}><img src="/lk.svg" alt="личный кабинет"/></a> */}
+            <Link href='/' className={style.header__lk}>Выйти</Link>
         </div>
     </header>
     <main className={style.main}>
