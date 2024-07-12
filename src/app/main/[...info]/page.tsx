@@ -16,6 +16,8 @@ type paramsType = {
 const MainPage = ({params}:{params: paramsType}) => {
     
 
+    
+    // const [LikedStart , SetLikedStart] = useState<String[]>(['']);
     const [Liked , SetLiked] = useState<String[]>(['']);
     const [SearchValue , SetSearchValue] = useState('');
     const [Search , SetSearch] = useState('');
@@ -28,14 +30,7 @@ const MainPage = ({params}:{params: paramsType}) => {
     });
     
     
-    useMemo(
-        ()=>{if (Liked.length) {
-            axios.post('https://evraz-back.vercel.app/api?need=like', {Liked: Liked, id_user: params.info[0]})
-            
-        }else{
-            axios.post('https://evraz-back.vercel.app/api?need=like', {Liked: ['0'], id_user: params.info[0]})
-        }}, [Liked]
-    )
+    
 
     useEffect(()=>{
         axios.get('https://evraz-back.vercel.app/api?need=posts')
@@ -67,6 +62,18 @@ const MainPage = ({params}:{params: paramsType}) => {
     
     
     
+    useMemo(
+        ()=>{
+            if (Liked[0]!=='') {
+                if (Liked.length) {
+            axios.post('https://evraz-back.vercel.app/api?need=like', {Liked: Liked, id_user: params.info[0]})
+            
+        }else{
+            axios.post('https://evraz-back.vercel.app/api?need=like', {Liked: ['0'], id_user: params.info[0]})
+        }
+            }
+            }, [Liked]
+    )
     const TakeLike = async (id_post: String, type: String)=>{
         console.log(id_post, type);
         if (type=='dislike') {

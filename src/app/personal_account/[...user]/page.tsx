@@ -102,7 +102,7 @@ const Account = ({params}:{params: paramsType}) => {
                         </li>
                     </ul>
                 </nav> */}
-                <ul className={`${style.settings} ${style.istReset}`}>
+                <ul className={`${style.settings} ${style.listReset}`}>
                     <li id="personalData" className={style.settings__component}>
                         <h2 className={style.settings__title}>Личные данные</h2>
                         <ul className={`${style.settings__list} ${style.listReset}`}>
