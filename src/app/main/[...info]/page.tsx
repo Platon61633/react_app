@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import style from '../style.module.css'
 import axios from 'axios';
 import { log } from 'console';
@@ -28,7 +28,14 @@ const MainPage = ({params}:{params: paramsType}) => {
     });
     
     
-    
+    useMemo(
+        ()=>{if (Liked.length) {
+            axios.post('https://evraz-back.vercel.app/api?need=like', {Liked: Liked, id_user: params.info[0]})
+            
+        }else{
+            axios.post('https://evraz-back.vercel.app/api?need=like', {Liked: ['0'], id_user: params.info[0]})
+        }}, [Liked]
+    )
 
     useEffect(()=>{
         axios.get('https://evraz-back.vercel.app/api?need=posts')
@@ -75,15 +82,15 @@ const MainPage = ({params}:{params: paramsType}) => {
         
     }
 
-    const SaveLike = ()=>{
-        if (Liked.length) {
-            axios.post('https://evraz-back.vercel.app/api?need=like', {Liked: Liked, id_user: params.info[0]})
+    // const SaveLike = ()=>{
+    //     if (Liked.length) {
+    //         axios.post('https://evraz-back.vercel.app/api?need=like', {Liked: Liked, id_user: params.info[0]})
             
-        }else{
-            axios.post('https://evraz-back.vercel.app/api?need=like', {Liked: ['0'], id_user: params.info[0]})
-        }
+    //     }else{
+    //         axios.post('https://evraz-back.vercel.app/api?need=like', {Liked: ['0'], id_user: params.info[0]})
+    //     }
         
-    }
+    // }
 
     
 
@@ -183,8 +190,8 @@ const MainPage = ({params}:{params: paramsType}) => {
                         </div>
                     </li>)}
                     )}
-                    <div className={style.submitLikes} onClick={SaveLike
-                                }><span>Сохранить Лайки</span></div>
+                    {/* <div className={style.submitLikes} onClick={SaveLike
+                                }><span>Сохранить Лайки</span></div> */}
                 </ul>
             </div>
         </div>
