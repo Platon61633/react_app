@@ -17,11 +17,23 @@ export default function SignIn() {
   const TrueLogin = 'jora'
 
   const [Login , SetLogin] = useState<String>('');
-  const [Password , SetPassword] = useState<String>('');
+  const [Password , SetPassword] = useState('');
 
   const [isFalsePassword , SetisFalsePassword] = useState<Boolean>(false);
 
+
+
+  
+  // encryptDecrypt(Password, '5341354354351').then(result => {
+      
+  //   console.log(`Зашифрованное сообщение: ${result.encrypted}`);
+  //   console.log(`Расшифрованное сообщение: ${result.decrypted}`);
+  // });
+
+
   const Auth = async ()=>{
+    
+    
     SetisLoader(true)
     console.log(Login, Password);
 
@@ -44,15 +56,6 @@ export default function SignIn() {
           SetisLoader(false)
         }}
       )
-    // if (TrueLogin===Login && TrueParol===Password) {
-      
-    //   axios.post('https://evraz-back.vercel.app/api?need=signin', {login: Login, password: Password})
-    //   .then(e=>console.log(e.data))
-    //   // axios.post('http://')
-    // }
-    // else{
-    //   SetisFalsePassword(true)
-    // }
   }
 
   return (

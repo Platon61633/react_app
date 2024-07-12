@@ -139,12 +139,12 @@ const MainPage = ({params}:{params: paramsType}) => {
             <div className={style.content}>
                 <ul className={`${style.content__list} ${style.list_reset}`}>
                     {Posts.filter((info)=>
-                        info[0].length?info[1].includes(Search) || 
-                        info[2].includes(Search) || 
-                        (info[1]+' '+info[2]).includes(Search) ||
-                        info[3].includes(Search) ||
-                        info[4].includes(Search) ||
-                        info[5].includes(Search)
+                        info[0].length?info[1].toLowerCase().includes(Search.toLowerCase()) || 
+                        info[2].toLowerCase().includes(Search.toLowerCase()) || 
+                        (info[1]+' '+info[2]).toLowerCase().includes(Search.toLowerCase()) ||
+                        info[3].toLowerCase().includes(Search.toLowerCase()) ||
+                        info[4].toLowerCase().includes(Search.toLowerCase()) ||
+                        info[5].toLowerCase().includes(Search.toLowerCase())
             :false).map(e=>
                         {
                             

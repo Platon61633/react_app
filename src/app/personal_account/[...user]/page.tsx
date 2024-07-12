@@ -16,7 +16,7 @@ const Account = ({params}:{params: paramsType}) => {
     const [InputSurname , SetInputSurname] = useState(decodeURI(params.user[2]));
     const [InputUniversity , SetInputUniversity] = useState(decodeURI(params.user[4]));
     const [InputFaculty , SetInputFaculty] = useState(decodeURI(params.user[5]));
-
+    
     const [Phone , SetPhone] = useState('');
     const [Subjects , SetSubjects] = useState('');
     
