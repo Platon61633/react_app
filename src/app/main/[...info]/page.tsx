@@ -6,6 +6,7 @@ import axios from 'axios';
 import { log } from 'console';
 import Modal from '@/app/components/Modal';
 import Link from 'next/link';
+import Loader from '@/app/components/Loader';
 
 type paramsType = {
     info: String[];
@@ -29,16 +30,18 @@ const MainPage = ({params}:{params: paramsType}) => {
         subjects: [''],
     });
     
+    const [isLoader , SetisLoader] = useState(false);
     
     
-
-    useEffect(()=>{
-        axios.get('https://evraz-back.vercel.app/api?need=posts')
+    const Effect = async()=>{
+        SetisLoader(true)
+        await axios.get('https://evraz-back.vercel.app/api?need=posts')
         .then(e=>
             SetPosts(e.data))
-        console.log(params);
-        axios.get('https://evraz-back.vercel.app/api?need=was_liked&id='+params.info[0])
-        .then(e=>{
+        // console.log(params);
+
+        await axios.get('https://evraz-back.vercel.app/api?need=was_liked&id='+params.info[0])
+        .then(e=> {
             console.log(e.data);
             
             let liked: String[] = []
@@ -56,6 +59,11 @@ const MainPage = ({params}:{params: paramsType}) => {
             // liked.push(string_liked.slice(lastSep+1, string_liked.length))
             SetLiked(liked)
         })
+        SetisLoader(false)
+    }
+
+    useEffect(()=>{
+        Effect()
         
         
     }, [])
@@ -102,7 +110,9 @@ const MainPage = ({params}:{params: paramsType}) => {
     
 
     return(
+        
         <div className={style.jkj}>
+            {isLoader?<Loader/>:null}
         {FlafModal?<Modal img={DataModal.img} name={DataModal.name} descr={DataModal.descr} funcFlag={SetFlafModal} subject={DataModal.subjects}/>
         :null}
         <header className={style.header}>
