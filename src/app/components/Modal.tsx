@@ -11,8 +11,8 @@ const Modal = ({img, name, descr, funcFlag, subject}:{img: String, name: String,
                     <div className="modal__content">
                         <h3 className="modal__title">{name}</h3>
                         <ul className="modal__subjectList listReset">
-                        {subject.map(elem=>
-                                    <li className="modal__subjectItem">{elem}</li>
+                        {subject.map((elem, id)=>
+                                    <li key={id} className="modal__subjectItem">{elem}</li>
                                 )}
                         </ul>
                     </div>
