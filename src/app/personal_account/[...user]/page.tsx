@@ -86,7 +86,7 @@ const Account = ({params}:{params: paramsType}) => {
         <div className={`${style.container} ${style.main__container}`}>
             <h1 className={style.main__title}>Профиль</h1>
             <div className={style.main__content}>
-                <nav className={style.nav}>
+                {/* <nav className={style.nav}>
                     <ul className={`${style.nav__list} ${style.listReset}`}>
                         <li className={`${style.nav__item} ${style.nav__item_selected}`}>
                             <a href="#personalData" className={style.nav__link}>
@@ -101,7 +101,7 @@ const Account = ({params}:{params: paramsType}) => {
                             </a>
                         </li>
                     </ul>
-                </nav>
+                </nav> */}
                 <ul className={`${style.settings} ${style.istReset}`}>
                     <li id="personalData" className={style.settings__component}>
                         <h2 className={style.settings__title}>Личные данные</h2>

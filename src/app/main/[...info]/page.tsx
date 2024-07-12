@@ -95,7 +95,7 @@ const MainPage = ({params}:{params: paramsType}) => {
     
 
     return(
-        <div>
+        <div className={style.jkj}>
         {FlafModal?<Modal img={DataModal.img} name={DataModal.name} descr={DataModal.descr} funcFlag={SetFlafModal} subject={DataModal.subjects}/>
         :null}
         <header className={style.header}>
