@@ -1,0 +1,212 @@
+.container {
+    max-width: 1170px;
+    width: 93%;
+    margin: 0 auto;
+}
+
+.listReset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* header */
+
+.header {
+    margin-bottom: 50px;
+    background-color: #3d3bff;
+}
+
+
+.header__container {
+    min-height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.header__select {
+    margin-right: 40px;
+    background-color: transparent;
+    border: none;
+    font-size: inherit;
+    color: #fff;
+}
+
+.header__option {
+    color: #fff;
+}
+
+.header__lk {
+    display: inline-block;
+    margin-left: auto;
+}
+
+/* main */
+
+.main__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav {
+    width: 30%;
+}
+
+.main__title {
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 28px;
+}
+
+.nav__item {
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav__item:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav__item:active {
+    scale: 0.99;
+}
+
+.nav__item_selected {
+    background-color: #fff;
+}
+
+.nav__itemText {
+    color: #333;
+    font-size: 15px;
+}
+
+.settings {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings__component {
+    padding: 20px;
+    border-radius: 16px;
+    background-color: #fff;
+}
+
+.settings__title {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.settings__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.settings__inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background-color: #E8EAED;
+    padding: 8px 15px;
+    border-radius: 10px;
+}
+
+.settings__label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+}
+
+
+.settings__input {
+    border: none;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+.settings__itemButton {
+    background-color: transparent;
+    margin-top: 8px;
+    border: none;
+    border-radius: 7px;
+    color: #fff;
+    padding: 8px 15px;
+}
+
+.btnSave {
+    background-color: #3d3bff;
+}
+
+.btnCancel {
+    background-color: #333;
+}
+
+.settings__createResumeBtn {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #3d3bff;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    padding: 8px 15px;
+}
+
+.settings__subjects_item {
+    background-color: #E8EAED;
+    padding: 8px 15px;
+    border-radius: 10px;
+
+    border: none;
+    width: 100%;
+    outline: none;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.settings__subjects {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.add_subject {
+    display: inline-block;
+    align-items: center;
+}
+
+.item__comment {
+    background-color: #E8EAED;
+    padding: 8px 15px;
+    border-radius: 10px;
+
+    border: none;
+    width: 100%;
+    outline: none;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    resize: none;
+    min-height: 120px;
+}

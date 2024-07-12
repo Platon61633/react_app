@@ -1,0 +1,197 @@
+.main {
+    padding-top: 50px;
+}
+
+.container {
+    position: relative;
+    max-width: 580px;
+    margin: auto;
+    border-radius: 24px;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 25px 100px;
+}
+
+.arrow{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #4f4f4f;
+}
+
+.form {
+    width: 100%;
+}
+
+.form__title {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.form__input_wrapper {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border: 1px solid #b8b8b8;
+    border-radius: 10px;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+}
+
+
+.form__label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #666;
+}
+
+.form__input {
+    border: none;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.btn {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    -webkit-transition: background-color 0.1s ease-in-out box-shadow 0.1s ease-in-out;
+    -o-transition: background-color 0.1s ease-in-out box-shadow 0.1s ease-in-out;
+    transition: background-color 0.1s ease-in-out box-shadow 0.1s ease-in-out;
+}
+
+
+
+.form__btn {
+    /* margin-top: 30px; */
+    margin-bottom: 20px;
+}
+
+.btn_active:focus {
+    border-color: #3d3bff; 
+    -webkit-box-shadow: 0 0 7px #3d3bff; 
+            box-shadow: 0 0 7px #3d3bff; 
+}
+
+.btn_active:active {
+    background-color: #0602ed;
+    scale: 0.98;
+}
+
+.btn_disabled {
+    background-color: #ebebeb;
+    color: #b8b8b8;
+}
+
+.btn_active {
+    background-color: #3d3bff;
+    color: #fff;
+}
+
+.registration_btn {
+    border: 1px solid #666;
+}
+
+.registration_btn:focus-visible {
+    outline: none;
+}
+
+.registration_btn:focus {
+    border: 1px solid #000;
+    -webkit-box-shadow: 0 0 7px #666;
+            box-shadow: 0 0 7px #666; 
+}
+
+.registration_btn:active {
+    scale: 0.98;
+}
+
+.wrong_text {
+    font-size: 12px;
+    font-weight: 500;
+    color: #b2351a;
+    margin-bottom: 20px;
+}
+
+/* ---------- LOADER ----------------------- */
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+  }
+  .loader::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite ;
+  }
+
+  .loader_btn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #3d3bff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  @keyframes rotate {
+    100%   {transform: rotate(360deg)}
+  }
+
+  @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+      25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+      75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+      100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+  }
+
+  /* ---------------------------------------------------------------------------------------- */
+
+
+
+  @media (max-width: 550px) {
+    .main {
+        background-color: #fff;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+
+    .btn {
+        padding: 15px;
+        font-size: 16px;
+    }
+}
